@@ -16,7 +16,7 @@ bool Cheltuiala::operator == (Cheltuiala const& obj)
 }
 Cheltuiala& Cheltuiala::operator = (Cheltuiala const& obj)
 {
-	this->value == obj.value;
+	this->value = obj.value;
 	return *this;
 }
 

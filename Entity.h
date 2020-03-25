@@ -10,4 +10,5 @@ public:
 	bool operator == (Cheltuiala const& obj);
 	Cheltuiala& operator =(Cheltuiala const& other);
 	Cheltuiala(const Cheltuiala& copy);
+
 };

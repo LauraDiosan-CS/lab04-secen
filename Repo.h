@@ -1,14 +1,14 @@
 #pragma once
-#include "Entity.h"
+#include "Expense.h"
 class Repo 
 {
 	private:
-		Cheltuiala entities[10];
+		Expense entities[10];
 		int noOfEntities;
 	public:
 		Repo();     
 		~Repo();
-		void addItem(Cheltuiala& s);
-		Cheltuiala getItemFromPos(int pos);
+		void addItem(Expense& s);
+		Expense getItemFromPos(int pos);
 		int getSize();
 };
