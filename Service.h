@@ -6,7 +6,7 @@ private:
 	Repo rep;
 public:
 	Service();
-	Service(Repo rp);
+	Service(Repo &rp);
 	~Service();
 	void addElement(unsigned int day, unsigned int sum, std::string type);
 	void removeElementAtPos(int i);

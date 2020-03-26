@@ -5,7 +5,7 @@ Service::Service()
 	rep = Repo();
 }
 
-Service::Service(Repo rp)
+Service::Service(Repo &rp)
 {
 	this->rep = rp;
 }

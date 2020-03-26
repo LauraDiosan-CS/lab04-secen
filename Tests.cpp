@@ -36,13 +36,15 @@ void tests()
 		Repo rp = Repo();
 		Service s = Service(rp);
 		s.addElement(1, 100, "altele");
-		assert(s.getSize() == 1);
+		Expense exp = Expense();
+		rp.addItem(exp);
+		assert(s.getSize() == 2);
 		assert(s.getElementAtPos(0) == Expense(1, 100, "altele"));
 		s.modifyElement(0, 1, 120, "altele");
 		assert(s.getItemPos(1, 120, "altele") == 0);
 		assert(s.getElementAtPos(0).getSum() == 120);
 		s.removeElementAtPos(0);
-		assert(s.getSize() == 0);
+		assert(s.getSize() == 1);
 		assert(s.getItemPos(1, 120, "altele") == -1);
 	}
 }
