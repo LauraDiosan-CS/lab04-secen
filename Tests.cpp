@@ -17,7 +17,11 @@ void tests()
 	rep.addItem(e);
 	assert(rep.getSize() == 1);
 	Expense item = rep.getItemFromPos(0);
+	assert(rep.getPositionOfElement(item) == 0);
 	assert(rep.getItemFromPos(0) == e);
 	rep.addItem(e2);
 	assert(rep.getSize() == 2);
+	rep.removeItemFromPos(1);
+	assert(rep.getSize() == 1);
+	assert(rep.getPositionOfElement(e2) == -1);
 }

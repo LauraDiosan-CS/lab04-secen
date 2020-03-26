@@ -19,3 +19,26 @@ int Repo::getSize()
 { 
 	return this->noOfEntities; 
 }
+
+void Repo::removeItemFromPos(int pos)
+{
+	if (pos >= 0 && pos < noOfEntities)
+	{
+		for (pos; pos < noOfEntities - 1; pos++)
+			this->entities[pos] = this->entities[pos + 1];
+		this->entities[noOfEntities - 1] = Expense();
+		noOfEntities--;
+	}
+}
+Expense* Repo::getArray()
+{
+	return this->entities;
+}
+
+int Repo::getPositionOfElement(Expense& s)
+{
+	for (unsigned i = 0; i < noOfEntities; i++)
+		if (s == this->entities[i])
+			return i;
+	return -1;
+}
