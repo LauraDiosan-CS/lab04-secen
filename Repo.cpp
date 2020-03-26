@@ -30,6 +30,10 @@ void Repo::removeItemFromPos(int pos)
 		noOfEntities--;
 	}
 }
+void Repo::modifyElementAtPos(int pos, Expense& s)
+{
+	this->entities[pos] = s;
+}
 Expense* Repo::getArray()
 {
 	return this->entities;

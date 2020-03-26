@@ -12,6 +12,7 @@ class Repo
 		Expense getItemFromPos(int pos);
 		int getSize();
 		void removeItemFromPos(int pos);
+		void modifyElementAtPos(int pos, Expense& s);
 		Expense* getArray();
 		int getPositionOfElement(Expense &s);
 };
