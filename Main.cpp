@@ -1,13 +1,27 @@
 // OOPLab4-5.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 //Axinte Gabriel
+//1. sa se determine toti jucatorii care nu au castigat nici un joc
+//2. sa se sorteze descrescator jucatorii dupa nr de jocuri jucate (topul jucatorilor)
 #include <iostream>
 #include "Tests.h"
+#include "Console.h"
+#include "Service.h"
+#include "Repo.h"
+
 int main()
 {
-	std::cout << "Starting tests\n";
-	tests();
-	std::cout << "Finished tests\n";
+	const bool ENABLETESTS = false;
+	if (ENABLETESTS)
+	{
+		std::cout << "Starting tests\n";
+		tests();
+		std::cout << "Finished tests\n";
+	}
+	Repo rep = Repo();
+	Service serv = Service(rep);
+	Console cons = Console(serv);
+	cons.run();
 	return 0;
 }
 

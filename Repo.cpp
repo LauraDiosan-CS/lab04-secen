@@ -5,11 +5,11 @@ Repo::Repo()
 	this->noOfEntities = 0;
 } 
 Repo::~Repo() {}
-void Repo::addItem(Expense& s)
+void Repo::addItem(Player s)
 { 
 	this->entities[this->noOfEntities++] = s; 
 }
-Expense Repo::getItemFromPos(int pos)
+Player Repo::getItemFromPos(int pos)
 { 
 	if (pos >= noOfEntities)
 		throw std::out_of_range("Index out of range");
@@ -26,20 +26,20 @@ void Repo::removeItemFromPos(int pos)
 	{
 		for (pos; pos < noOfEntities - 1; pos++)
 			this->entities[pos] = this->entities[pos + 1];
-		this->entities[noOfEntities - 1] = Expense();
+		this->entities[noOfEntities - 1] = Player();
 		noOfEntities--;
 	}
 }
-void Repo::modifyElementAtPos(int pos, Expense& s)
+void Repo::modifyElementAtPos(int pos, Player& s)
 {
 	this->entities[pos] = s;
 }
-Expense* Repo::getArray()
+Player* Repo::getArray()
 {
 	return this->entities;
 }
 
-int Repo::getPositionOfElement(Expense& s)
+int Repo::getPositionOfElement(Player& s)
 {
 	for (unsigned i = 0; i < noOfEntities; i++)
 		if (s == this->entities[i])

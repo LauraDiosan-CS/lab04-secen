@@ -1,18 +1,18 @@
 #pragma once
-#include "Expense.h"
+#include "Player.h"
 class Repo 
 {
 	private:
-		Expense entities[10];
+		Player entities[10];
 		int noOfEntities;
 	public:
 		Repo();     
 		~Repo();
-		void addItem(Expense& s);
-		Expense getItemFromPos(int pos);
+		void addItem(Player s);
+		Player getItemFromPos(int pos);
 		int getSize();
 		void removeItemFromPos(int pos);
-		void modifyElementAtPos(int pos, Expense& s);
-		Expense* getArray();
-		int getPositionOfElement(Expense &s);
+		void modifyElementAtPos(int pos, Player& s);
+		Player* getArray();
+		int getPositionOfElement(Player &s);
 };

@@ -1,5 +1,6 @@
 #pragma once
 #include "Repo.h"
+
 class Service
 {
 private:
@@ -8,12 +9,13 @@ public:
 	Service();
 	Service(Repo &rp);
 	~Service();
-	void addElement(unsigned int day, unsigned int sum, std::string type);
+	void addElement(unsigned int wGames, unsigned int sum, const char* name);
 	void removeElementAtPos(int i);
-	void modifyElement(unsigned int pos, unsigned int day, unsigned int sum, std::string type);
-	Expense getElementAtPos(int i);
-	Expense* getArray();
-	int getItemPos(unsigned int day, unsigned int sum, std::string type);
+	void modifyElement(unsigned int pos, unsigned int wGames, unsigned int sum, const char* name);
+	Player getElementAtPos(int i);
+	Player* getArray();
+	void sortArrayDescByWonGames();
+	int getItemPos(unsigned int wGames, unsigned int sum, const char* name);
 	unsigned int getSize();
 };
 

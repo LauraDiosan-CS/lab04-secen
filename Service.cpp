@@ -1,4 +1,5 @@
 #include "Service.h"
+#include <algorithm>
 
 Service::Service()
 {
@@ -14,9 +15,9 @@ Service::~Service()
 {
 }
 
-void Service::addElement(unsigned int day, unsigned int sum, std::string type)
+void Service::addElement(unsigned int wGames, unsigned int sum, const char* name)
 {
-	Expense e = Expense(day,sum,type);
+	Player e = Player(wGames,sum,name);
 	this->rep.addItem(e);
 }
 
@@ -25,25 +26,33 @@ void Service::removeElementAtPos(int i)
 	this->rep.removeItemFromPos(i);
 }
 
-void Service::modifyElement(unsigned int pos, unsigned int day, unsigned int sum, std::string type)
+void Service::modifyElement(unsigned int pos, unsigned int wGames, unsigned int sum, const char* name)
 {
-	Expense e = Expense(day, sum, type);
+	Player e = Player(wGames, sum, name);
 	this->rep.modifyElementAtPos(pos, e);
 }
 
-Expense Service::getElementAtPos(int i)
+Player Service::getElementAtPos(int i)
 {
 	return this->rep.getItemFromPos(i);
 }
 
-Expense* Service::getArray()
+Player* Service::getArray()
 {
 	return this->rep.getArray();
 }
 
-int Service::getItemPos(unsigned int day, unsigned int sum, std::string type)
+void Service::sortArrayDescByWonGames()
 {
-	Expense e = Expense(day, sum, type);
+	Player* playerArray = this->getArray();
+	unsigned int arrSize= this->getSize();
+	std::sort(playerArray, playerArray + arrSize,
+		[](Player& a, Player& b)->bool {return a.getWonGames() > b.getWonGames(); });
+}
+
+int Service::getItemPos(unsigned int wGames, unsigned int sum, const char* name)
+{
+	Player e = Player(wGames, sum, name);
 	return this->rep.getPositionOfElement(e);
 }
 
